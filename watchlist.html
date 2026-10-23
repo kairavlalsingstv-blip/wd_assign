@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePass - My Watchlist</title>
+    <link rel="stylesheet" href="css/style.css"> 
+</head> 
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🎬 CinePass</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Movies</a></li>
+                <li><a href="recommend.html">Recommendations</a></li>
+                <li><a href="watchlist.html" class="active">Watchlist</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="booking.html">Book Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>My Watchlist / Favourites</h1>
+        <ul id="watchlistContainer" style="list-style: none; padding: 0; margin-top: 1.5rem;">
+            <!-- Populated via JS -->
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CinePass Movie Discovery.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('watchlistContainer');
+            const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+
+            if (watchlist.length === 0) {
+                container.innerHTML = '<p style="color: #94a3b8;">Your watchlist is currently empty.</p>';
+                return;
+            }
+
+            watchlist.forEach(movie => {
+                const li = document.createElement('li');
+                li.style.backgroundColor = '#1e293b';
+                li.style.padding = '1rem';
+                li.style.marginBottom = '0.75rem';
+                li.style.borderRadius = '4px';
+                li.style.display = 'flex';
+                li.style.justifyContent = 'space-between';
+                li.style.alignItems = 'center';
+
+                li.innerHTML = `<span>${movie}</span> <a href="booking.html?movie=${movie}" class="btn">Book Now</a>`;
+                container.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
+

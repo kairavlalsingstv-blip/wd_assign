@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePass - Home & Movies</title>
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+ <body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🎬 CinePass</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Movies</a></li>
+                <li><a href="recommend.html">Recommendations</a></li>
+                <li><a href="watchlist.html">Watchlist</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="booking.html">Book Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Now Showing</h1>
+        <p>Explore our latest movie collection and book your tickets instantly.</p>
+
+        <div class="movie-grid">
+            <!-- Movie 1 -->
+            <div class="movie-card">
+                <img src="images/cyberodyssey.jpg" alt="Cyber Odyssey Movie Poster">
+                <div class="movie-info">
+                    <h3>Cyber Odyssey</h3>
+                    <p>Genre: Sci-Fi | Rating: M</p>
+                    <a href="booking.html?movie=Cyber Odyssey" class="btn">Book Tickets</a>
+                    <button onclick="toggleWatchlist('Cyber Odyssey')" class="btn btn-secondary">⭐ Watchlist</button>
+                </div>
+            </div>
+            <!-- Movie 2 -->
+            <div class="movie-card">
+                <img src="images/midnightheist.jpg" alt="Midnight Heist Movie Poster">
+                <div class="movie-info">
+                    <h3>Midnight Heist</h3>
+                    <p>Genre: Action/Thriller | Rating: MA15+</p>
+                    <a href="booking.html?movie=Midnight Heist" class="btn">Book Tickets</a>
+                    <button onclick="toggleWatchlist('Midnight Heist')" class="btn btn-secondary">⭐ Watchlist</button>
+                </div>
+            </div>
+            <!-- Movie 3 -->
+            <div class="movie-card">
+                <img src="images/thelastlaugh.jpeg" alt="The Last Laugh Movie Poster">
+                <div class="movie-info">
+                    <h3>The Last Laugh</h3>
+                    <p>Genre: Comedy | Rating: PG</p>
+                    <a href="booking.html?movie=The Last Laugh" class="btn">Book Tickets</a>
+                    <button onclick="toggleWatchlist('The Last Laugh')" class="btn btn-secondary">⭐ Watchlist</button>
+                </div>
+            </div>
+            <!-- Movie 4 -->
+            <div class="movie-card">
+                <img src="images/whispersinthedark.png" alt="Whispers in the Dark Movie Poster">
+                <div class="movie-info">
+                    <h3>Whispers in the Dark</h3>
+                    <p>Genre: Horror | Rating: MA15+</p>
+                    <a href="booking.html?movie=Whispers in the Dark" class="btn">Book Tickets</a>
+                    <button onclick="toggleWatchlist('Whispers in the Dark')" class="btn btn-secondary">⭐ Watchlist</button>
+                </div>
+            </div>
+            <!-- Movie 5 -->
+            <div class="movie-card">
+                <img src="images/beyondthestars.jpg" alt="Beyond the Stars Movie Poster">
+                <div class="movie-info">
+                    <h3>Beyond the Stars</h3>
+                    <p>Genre: Animation | Rating: G</p>
+                    <a href="booking.html?movie=Beyond the Stars" class="btn">Book Tickets</a>
+                    <button onclick="toggleWatchlist('Beyond the Stars')" class="btn btn-secondary">⭐ Watchlist</button>
+                </div>
+            </div>
+            <!-- Movie 6 -->
+            <div class="movie-card">
+                <img src="images/echoesoftime.jpg" alt="Echoes of Time Movie Poster">
+                <div class="movie-info">
+                    <h3>Echoes of Time</h3>
+                    <p>Genre: Drama | Rating: M</p>
+                    <a href="booking.html?movie=Echoes of Time" class="btn">Book Tickets</a>
+                    <button onclick="toggleWatchlist('Echoes of Time')" class="btn btn-secondary">⭐ Watchlist</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CinePass Movie Discovery. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script> 
+</body>
+</html>
+

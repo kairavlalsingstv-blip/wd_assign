@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePass - Recommendations</title>
+    <link rel="stylesheet" href="css/style.css"> 
+</head> 
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🎬 CinePass</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Movies</a></li>
+                <li><a href="recommend.html" class="active">Recommendations</a></li>
+                <li><a href="watchlist.html">Watchlist</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="booking.html">Book Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Movie Recommendation Engine</h1>
+        <form id="recForm" onsubmit="getRecommendation(event)">
+            <div class="form-group">
+                <label for="prefGenre">Preferred Genre:</label>
+                <select id="prefGenre" required>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Animation">Animation</option>
+                    <option value="Drama">Drama</option>
+                </select>
+            </div>
+            <button type="submit" class="btn" style="width: 100%;">Get Recommendation</button>
+        </form>
+        <div id="recResult" style="text-align: center; margin-top: 2rem; font-size: 1.2rem; color: #38bdf8;"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CinePass Movie Discovery.</p>
+    </footer>
+
+    <script>
+        function getRecommendation(e) {
+            e.preventDefault();
+            const genre = document.getElementById('prefGenre').value;
+            const recommendations = {
+                "Sci-Fi": "Cyber Odyssey",
+                "Action": "Midnight Heist",
+                "Comedy": "The Last Laugh",
+                "Horror": "Whispers in the Dark",
+                "Animation": "Beyond the Stars",
+                "Drama": "Echoes of Time"
+            };
+            const recommendedMovie = recommendations[genre] || "Cyber Odyssey";
+            document.getElementById('recResult').innerHTML = `We recommend you watch: <strong>${recommendedMovie}</strong>!<br><a href="booking.html?movie=${recommendedMovie}" class="btn" style="margin-top: 1rem;">Book This Movie</a>`;
+        }
+    </script>
+</body>
+</html>
+
